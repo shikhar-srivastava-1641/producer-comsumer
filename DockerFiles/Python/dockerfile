@@ -1,0 +1,9 @@
+FROM python:3.6
+
+WORKDIR /Producer_Consumer
+
+ADD ./requirements.txt /Producer_Consumer/requirements.txt
+RUN pip3.6 install -r requirements.txt
+ADD . /Producer_Consumer
+
+CMD ["python3.6", "manage.py", "runserver", "0.0.0.0:8000"]
